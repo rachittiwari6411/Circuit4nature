@@ -4,107 +4,135 @@
     <meta charset="UTF-8">
     <title>Vulture Bot - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            /* fun gradient bg */
-            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-            min-height: 100vh;
-            color: #222;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: Arial, sans-serif;
+        background: #000; /* fallback behind hero */
+        color: #dfe9dc;
+    }
 
-        /* Colorful navbar */
-        nav {
-            background: linear-gradient(90deg, #4a00e0, #8e2de2);
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-        }
-        .nav-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-right: 10px;
-        }
-        .nav-logo img {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-        }
-        .nav-logo span {
-            color: #fff;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-1px);
-        }
-        .nav-links .active {
-            background: #ff9a76;
-            color: #222;
-        }
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        background: linear-gradient(90deg, #14532d, #422006); /* dark green → dark brown */
+        padding: 10px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    .nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 10px;
+    }
+    .nav-logo img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+    }
+    .nav-logo span {
+        color: #e5f5df; /* pale green */
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .nav-links a {
+        color: #e5f5df;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .nav-links a:hover {
+        background: rgba(255,255,255,0.15);
+        transform: translateY(-1px);
+    }
+    .nav-links .active {
+        background: #22c55e; /* bright leaf green */
+        color: #052e16;
+    }
 
-        /* Page content */
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 15px 40px;
-        }
-        h1 {
-            font-size: 30px;
-            margin-bottom: 10px;
-            color: #2b1055;
-        }
-        h2 {
-            font-size: 22px;
-            margin: 20px 0 10px;
-            color: #4a00e0;
-        }
-        h3 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            color: #8e2de2;
-        }
-        p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .box {
-            background: rgba(255,255,255,0.95);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-            margin-top: 15px;
-        }
-        ul { margin-left: 18px; margin-top: 6px; }
-        ul li { margin-bottom: 6px; }
-    </style>
+    /* Hero with your image (unchanged except text colors) */
+    .hero {
+        height: 100vh;
+        background: url("image.png") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        padding-top: 60px;
+    }
+    .hero-overlay {
+        background: rgba(0,0,0,0.35);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .hero-text {
+        color: #f9fafb;
+        margin-left: 40px;
+    }
+    .hero-text h1 {
+        font-size: 52px;
+        letter-spacing: 3px;
+        line-height: 1.1;
+    }
+    .hero-text p {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    /* Info section: black background card, green–brown text */
+    .container {
+        max-width: 900px;
+        margin: 30px auto 40px;
+        padding: 0 15px 40px;
+    }
+    .box {
+        background: #020617;          /* almost black behind data */
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.9);
+        margin-top: 15px;
+        border: 1px solid #14532d;    /* dark green border */
+    }
+    h2 {
+        font-size: 22px;
+        margin: 20px 0 10px;
+        color: #bbf7d0;               /* soft light green */
+    }
+    h3 {
+        margin-top: 15px;
+        margin-bottom: 8px;
+        color: #a16207;               /* earthy brown-gold */
+    }
+    p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+        color: #e5f5df;               /* light greenish text */
+    }
+    ul { margin-left: 18px; margin-top: 6px; }
+    ul li {
+        margin-bottom: 6px;
+        color: #d1fae5;               /* slightly brighter green */
+    }
+</style>
+
 </head>
 <body>
 
-    <!-- Colorful navbar -->
+    <!-- Navbar -->
     <nav>
         <div class="nav-inner">
             <div class="nav-logo">
@@ -120,11 +148,18 @@
         </div>
     </nav>
 
-    <!-- Home content -->
-    <div class="container">
-        <h1>Vulture Bot</h1>
-        <p>Circuit for Nature – a project to support nature’s cleaners using simple robotics.</p>
+    <!-- First screen: your image -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>CIRCUIT<br>4<br>NATURE</h1>
+                <p>Vulture Bot – Environmental robotics project</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Scroll down: information -->
+    <div class="container">
         <div class="box">
             <h2>Problem Statement</h2>
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            /* change this to your background image */
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            /* change this to your logo image */
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .enter-button {
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4a6cff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .enter-button:hover {
+            background-color: #3452d1;
+        }
+    </style>
+</head>
+<body>
+    <!-- logo in the center -->
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <!-- button below logo, redirects to another page -->
+    <a href="page_2.html">
+        <button class="enter-button">Enter</button>
+    </a>
+</body>
+</html>

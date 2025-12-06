@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vulture Bot - Home</title>
+    <title>Vulture Bot - Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
+        font-family: Arial, sans-serif;
+        background: url("image.png") center/cover no-repeat fixed; /* background image */
+        color: #e5f5df;
+        min-height: 100vh;
         }
 
-        /* Navbar (same on all pages) */
+
+        /* Navbar - same theme */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
-            background: linear-gradient(90deg, #4a00e0, #8e2de2);
+            background: linear-gradient(90deg, #14532d, #422006);
             padding: 10px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
         .nav-inner {
             max-width: 900px;
@@ -44,12 +46,12 @@
             border-radius: 50%;
         }
         .nav-logo span {
-            color: #fff;
+            color: #e5f5df;
             font-weight: bold;
             font-size: 16px;
         }
         .nav-links a {
-            color: #fff;
+            color: #e5f5df;
             text-decoration: none;
             padding: 6px 12px;
             border-radius: 20px;
@@ -57,72 +59,89 @@
             transition: background 0.2s, transform 0.2s;
         }
         .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             transform: translateY(-1px);
         }
         .nav-links .active {
-            background: #ff9a76;
-            color: #222;
+            background: #22c55e;
+            color: #052e16;
         }
 
-        /* Full-screen hero with your image */
-        .hero {
-            height: 100vh;
-            background: url("image.png") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            padding-top: 60px; /* space for navbar */
-        }
-        .hero-overlay {
-            background: rgba(0,0,0,0.25);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-        .hero-text {
-            color: #fff;
-            margin-left: 40px;
-        }
-        .hero-text h1 {
-            font-size: 52px;
-            letter-spacing: 3px;
-            line-height: 1.1;
-        }
-        .hero-text p {
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        /* Info section below hero */
+        /* Page layout */
         .container {
             max-width: 900px;
-            margin: 30px auto 40px;
+            margin: 80px auto 40px;
             padding: 0 15px 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            color: #bbf7d0;
+            margin-bottom: 10px;
         }
         h2 {
             font-size: 22px;
             margin: 20px 0 10px;
-            color: #4a00e0;
-        }
-        h3 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            color: #8e2de2;
+            color: #bbf7d0;
         }
         p {
             margin-bottom: 10px;
             line-height: 1.6;
+            color: #e5f5df;
         }
-        .box {
-            background: rgba(255,255,255,0.96);
+
+        .card {
+            background: #020617;          /* almost black card */
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            padding: 24px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.9);
+            border: 1px solid #14532d;    /* dark green border */
             margin-top: 15px;
         }
-        ul { margin-left: 18px; margin-top: 6px; }
-        ul li { margin-bottom: 6px; }
+
+        /* Contact info */
+        .contact-info p span {
+            color: #a16207;  /* brown accent labels */
+            font-weight: 600;
+        }
+
+        /* FAQ accordion using <details> */
+        .faq {
+            margin-top: 20px;
+        }
+        .faq details {
+            background: #020617;
+            border-radius: 8px;
+            border: 1px solid #1f2937;
+            margin-bottom: 10px;
+            padding: 10px 14px;
+        }
+        .faq details[open] {
+            border-color: #22c55e;
+        }
+        .faq summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #bbf7d0;
+        }
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq summary::after {
+            content: " +";
+            color: #a16207;
+            float: right;
+        }
+        .faq details[open] summary::after {
+            content: " −";
+        }
+        .faq p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #d1fae5;
+        }
     </style>
 </head>
 <body>
@@ -135,57 +154,49 @@
                 <span>Vulture Bot</span>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="page_2.html">Home</a>
                 <a href="result.html">Result</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="active">Contact</a>
                 <a href="feedback.html">Feedback</a>
             </div>
         </div>
     </nav>
 
-    <!-- First screen: your image -->
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1>CIRCUIT<br>4<br>NATURE</h1>
-                <p>Vulture Bot – Environmental robotics project</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scroll down: information -->
+    <!-- Contact + FAQ content -->
     <div class="container">
-        <div class="box">
-            <h2>Problem Statement</h2>
+        <h1>Contact & FAQ</h1>
 
-            <h3>The vulture crisis</h3>
-            <p>
-                Vultures are important decomposers. When animals die, vultures help clean up the carcasses
-                and reduce the spread of disease.
-            </p>
-            <p>
-                In many areas, vulture populations are dropping because of habitat loss, poisoning, and
-                human activity. This means carcasses stay longer in the open and can become a health risk
-                for other animals and people.
-            </p>
+        <div class="card">
+            <h2>Contact Details</h2>
+            <div class="contact-info">
+                <p><span>Team:</span> Circuit for Nature</p>
+                <p><span>Email:</span> your-email@example.com</p>
+                <p><span>School:</span> Your school name here</p>
+                <p><span>Location:</span> City, Country</p>
+            </div>
 
-            <h3>Our idea: Vulture Bot</h3>
-            <p>
-                Vulture Bot is a small robot that tries to copy part of the vulture’s job in a simple,
-                controlled way. It focuses on detecting dead animals and helping handle them more safely.
-            </p>
-            <p>
-                The goal is not to replace real vultures but to explore how technology can support public
-                health and the environment when a key species is in danger.
-            </p>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <details>
+                    <summary>What is Vulture Bot?</summary>
+                    <p>Vulture Bot is a student-built robot that explores how technology can support the role of vultures by detecting and handling animal carcasses more safely.</p>
+                </details>
 
-            <h3>Objectives</h3>
-            <ul>
-                <li>Detect carcasses using basic computer vision (YOLO-style models).</li>
-                <li>Move towards the carcass using a Raspberry Pi based control system.</li>
-                <li>Use a small arm or scoop to interact with the carcass area.</li>
-                <li>Test simple methods to reduce smell and exposure safely.</li>
-            </ul>
+                <details>
+                    <summary>Why did you choose vultures?</summary>
+                    <p>Vultures are important decomposers, but many species are endangered. The project highlights this problem while testing simple robotics and computer vision ideas.</p>
+                </details>
+
+                <details>
+                    <summary>What hardware does the project use?</summary>
+                    <p>The prototype is designed around a Raspberry Pi controller, basic sensors, and a small arm or scoop mechanism for interacting with carcass-like targets.</p>
+                </details>
+
+                <details>
+                    <summary>Can I collaborate or suggest improvements?</summary>
+                    <p>Yes. You can reach out through the email above to share ideas, code suggestions, or possible improvements to the robot and detection pipeline.</p>
+                </details>
+            </div>
         </div>
     </div>
 
